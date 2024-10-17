@@ -1,0 +1,10 @@
+# file_name : security/ir.model.access.csv
+# ----------------------------------------
+
+access_model_name,access_model_name,model_model_name,group_id,1,1,1,1
+
+
+# ----------------------------------------
+# EX: Set Access Rights for new model "commission.commission", file_name : ir.model.access.csv
+#
+# access_commission_commission,access_commission_commission,model_commission_commission,base.group_user,1,1,1,1

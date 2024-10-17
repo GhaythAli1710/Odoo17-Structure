@@ -1,0 +1,41 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit form view definition -->
+        <record id="model_name_view_form" model="ir.ui.view">
+            <field name="name">model.name.view.form</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- design form -->
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add form view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_form" model="ir.ui.view">
+                    <field name="name">commission.commission.view.form</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <form>
+                           <header>
+                           </header>
+                           <sheet>
+                               <h1>
+                               </h1>
+                               <group>
+                               <notebook>
+                                   <page>
+                                   </page>
+                               </notebook>
+                           </sheet>
+                        </form>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

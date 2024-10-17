@@ -1,0 +1,41 @@
+<!--file_name : views/model_name_views.xml-->
+<odoo>
+    <data>
+        <record id="model_name_view_graph" model="ir.ui.view">
+            <field name="name">model.name.view.graph</field>
+            <field name="model">model.name</field>
+            <field name="type">graph</field>
+            <field name="inherit_id" ref="view_external_id"/>
+            <field name="arch" type="xml">
+                <!-- CUSTOMIZATIONS -->
+                <xpath expr="//graph/field[@name='field_name']" position="position_option">
+                    <!-- position_options : {inside , after, before, replace, move, attributes} -->
+                    <!-- Modify Items -->
+                    <attribute name="attribute_name">New_value</attribute>
+                    <!-- Add Items -->
+                    <field name="field_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- EX: Inherit graph view in "purchase.report" model,
+                 file_name : "purchase_report_views.xml"
+        <odoo>
+            <data>
+                <record id="purchase_report_view_graph" model="ir.ui.view">
+                    <field name="name">purchase.report.view.graph</field>
+                    <field name="model">purchase.report</field>
+                    <field name="type">graph</field>
+                    <field name="inherit_id" ref="purchase.view_purchase_order_graph"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//graph/field[@name='untaxed_total']" position="before">
+                            <field name="price_unit" type="row"/>
+                            <field name="price_unit" type="measure"/>
+                        </xpath>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

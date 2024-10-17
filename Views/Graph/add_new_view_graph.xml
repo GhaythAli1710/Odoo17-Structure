@@ -1,0 +1,41 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit graph view definition -->
+        <record id="model_name_view_graph" model="ir.ui.view">
+            <field name="name">model.name.view.graph</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <graph string="Graph Name"
+                       model="model_name"
+                       type="type_option"
+                       clustered="True"
+                       order="descending"
+                       sample="1">
+                    <!-- design graph -->
+                </graph>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--
+           type_options = {line, bar, pie, donut, area, smatter, radar}
+        -->
+
+        <!--EX: Add graph view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_graph" model="ir.ui.view">
+                    <field name="name">commission.commission.view.graph</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <graph string="Commission Analysis" type="line" sample="1" >
+                           <field name="date" type="row" interval="day"/>
+                           <field name="price_subtotal" type="measure"/>
+                        </graph>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

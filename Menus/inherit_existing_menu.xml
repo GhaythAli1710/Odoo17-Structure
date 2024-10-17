@@ -1,0 +1,21 @@
+<!-- file_name : views/module_name_menus.xml -->
+<odoo>
+    <data>
+        <!-- inherit existing menu to modify -->
+        <record id="module_name.menu_external_id" model="ir.ui.menu">
+            <field name="field_name">New_Value</field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: inherit existing menu "External ID : sale_menu_reports",
+                from module_name "sale", file_name "sale_menus.xml",
+                to modify sequence from "3" to "4"
+        <odoo>
+            <data>
+                <record id="sale.sale_menu_reports" model="ir.actions.act_window">
+                    <field name="sequence">4</field>
+                </record>
+            </data>
+        <odoo/>
+        -->

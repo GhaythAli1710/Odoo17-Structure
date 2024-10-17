@@ -1,0 +1,21 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- inherit existing window action to modify -->
+        <record id="module_name.window_action_external_id" model="ir.actions.act_window">
+            <field name="field_name">New_Value</field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: inherit existing window action "External ID : sale_order_window_action",
+                from module_name "sale", file_name "sale_order_views.xml",
+                to modify action_name from "Quotations" to "New Quotation"
+        <odoo>
+            <data>
+                <record id="sale.sale_order_window_action" model="ir.actions.act_window">
+                    <field name="name">New Quotation</field>
+                </record>
+            </data>
+        <odoo/>
+        -->

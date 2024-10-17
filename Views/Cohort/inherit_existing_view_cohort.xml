@@ -1,0 +1,30 @@
+<!--file_name : views/model_name_views.xml-->
+<odoo>
+    <data>
+        <record id="model_name_view_cohort" model="ir.ui.view">
+            <field name="name">model.name.view.cohort</field>
+            <field name="model">model.name</field>
+            <field name="type">cohort</field>
+            <field name="inherit_id" ref="view_external_id"/>
+            <field name="arch" type="xml">
+                <!-- CUSTOMIZATIONS -->
+                <xpath expr="//cohort" position="position_option">
+                    <!-- position_options : {inside , after, before, replace, move, attributes} -->
+                    <!-- Modify Items -->
+                    <attribute name="attribute_name">New_value</attribute>
+                    <!-- Add Items -->
+                    <field name="field_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- EX: Inherit cohort view in " " model,
+                 file_name : "_views.xml"
+        <odoo>
+            <data>
+
+            </data>
+        </odoo>
+        -->

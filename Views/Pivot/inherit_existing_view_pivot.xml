@@ -1,0 +1,41 @@
+<!--file_name : views/model_name_views.xml-->
+<odoo>
+    <data>
+        <record id="model_name_view_pivot" model="ir.ui.view">
+            <field name="name">model.name.view.pivot</field>
+            <field name="model">model.name</field>
+            <field name="type">pivot</field>
+            <field name="inherit_id" ref="view_external_id"/>
+            <field name="arch" type="xml">
+                <!-- CUSTOMIZATIONS -->
+                <xpath expr="//pivot/field[@name='field_name']" position="position_option">
+                    <!-- position_options : {inside , after, before, replace, move, attributes} -->
+                    <!-- Modify Items -->
+                    <attribute name="attribute_name">New_value</attribute>
+                    <!-- Add Items -->
+                    <field name="field_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- EX: Inherit pivot view in "purchase.report" model,
+                 file_name : "purchase_report_views.xml"
+        <odoo>
+            <data>
+                <record id="purchase_report_view_pivot" model="ir.ui.view">
+                    <field name="name">purchase.report.view.pivot</field>
+                    <field name="model">purchase.report</field>
+                    <field name="type">pivot</field>
+                    <field name="inherit_id" ref="purchase.view_purchase_order_pivot"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//pivot/field[@name='untaxed_total']" position="before">
+                            <field name="price_unit" type="col"/>
+                            <field name="price_unit" type="measure"/>
+                        </xpath>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

@@ -1,0 +1,26 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit window action opening default views on specific model -->
+        <record id="model_name_window_action" model="ir.actions.act_window">
+            <field name="name">action_name</field>
+            <field name="res_model">model.name</field>
+            <field name="view_mode">modes</field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- modes {tree,form,kanban,...etc} -->
+
+        <!--EX: Add window action opening "list and form" default views on model_name "sale.order",
+                file_name : "sale_order_views.xml"
+        <odoo>
+            <data>
+                <record id="sale_order_window_action" model="ir.actions.act_window">
+                    <field name="name">Quotations</field>
+                    <field name="res_model">sale.order</field>
+                    <field name="view_mode">tree,form</field>
+                </record>
+            </data>
+        <odoo/>
+        -->

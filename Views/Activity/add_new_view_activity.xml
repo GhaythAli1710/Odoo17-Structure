@@ -1,0 +1,46 @@
+<!-- file_name : views/model_name_views.xml -->
+<!--
+    ** Requirements:
+    - Need add dependency for the module :
+      configure the manifest file, and add 'depends' as 'mail' { 'depends' : ['mail'] }
+
+   - Create a new model :
+     inherit 'mail.thread' and 'mail.activity.mixin'
+     { _inherit=['mail.thread','mail.activity.mixin'] }
+-->
+<odoo>
+    <data>
+        <!-- explicit activity view definition -->
+        <record id="model_name_view_activity" model="ir.ui.view">
+            <field name="name">model.name.view.activity</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <activity string="activity_name">
+                    <!-- design activity -->
+                </activity>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add activity view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_activity" model="ir.ui.view">
+                    <field name="name">commission.commission.view.activity</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <activity>
+                           <templates>
+                              <div t-name="activity-box">
+                                 <div>
+                                    <field name="name"/>
+                                 </div>
+                              </div>
+                           </templates>
+                        </activity>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

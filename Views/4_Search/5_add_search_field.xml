@@ -1,0 +1,9 @@
+<search>
+    <field name="field_name" filter_domain="[('filter_field', 'operation', value)]"/>
+</search>
+
+        <!-- EX: Add search field "customer_id"
+        <search>
+            <field name="customer_id" filter_domain="[('customer_id.name', 'ilike', self)]"/>
+        </search>
+        -->

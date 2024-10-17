@@ -1,0 +1,19 @@
+<search>
+    <group name="group_name" string="Group By">
+        <separator/>
+        <!-- <filter/> -->
+    </group>
+</search>
+
+        <!-- EX: Add group by " "
+        <search>
+            <group name="group_by" string="Group By">
+                <separator/>
+                <filter name="type" string="Type" context="{'group_by': 'type'}"/>
+                <separator/>
+                <filter name="customer_id" string="Customer" context="{'group_by': 'customer_id'}"/>
+                <separator string="By Date"/>
+                <filter name="order_date" string="Date" context="{'group_by': 'order_date'}"/>
+            </group>
+        </search>
+        -->

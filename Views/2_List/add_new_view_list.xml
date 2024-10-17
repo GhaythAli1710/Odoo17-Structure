@@ -1,0 +1,36 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="model_name_view_tree" model="ir.ui.view">
+            <field name="name">model.name.view.tree</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cl1"/>
+                    <field name="col2"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add list view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_tree" model="ir.ui.view">
+                        <field name="name">commission.commission.view.tree</field>
+                        <field name="model">commission.commission</field>
+                        <field name="arch" type="xml">
+                            <tree>
+                                <field name="name"/>
+                                <field name="stage_id"/>
+                                <field name="customer_id"/>
+                                <field name="reference"/>
+                                <field name="start_date"/>
+                            </tree>
+                        </field>
+                </record>
+            </data>
+        <odoo/>
+        -->

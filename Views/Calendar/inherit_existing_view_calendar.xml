@@ -1,0 +1,43 @@
+<!--file_name : views/model_name_views.xml-->
+<odoo>
+    <data>
+        <record id="model_name_view_calendar" model="ir.ui.view">
+            <field name="name">model.name.view.calendar</field>
+            <field name="model">model.name</field>
+            <field name="type">calendar</field>
+            <field name="inherit_id" ref="view_external_id"/>
+            <field name="arch" type="xml">
+                <!-- CUSTOMIZATIONS -->
+                <xpath expr="//calendar/field[@name='field_name']" position="position_option">
+                    <!-- position_options : {inside , after, before, replace, move, attributes} -->
+                    <!-- Modify Items -->
+                    <attribute name="attribute_name">New_value</attribute>
+                    <!-- Add Items -->
+                    <field name="field_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- EX: Inherit calendar view in "hr.leave" model,
+                 file_name : "hr_leave_views.xml"
+        <odoo>
+            <data>
+                <record id="hr_leave_view_calendar" model="ir.ui.view">
+                    <field name="name">hr.leave.view.calendar</field>
+                    <field name="model">hr.leave</field>
+                    <field name="type">calendar</field>
+                    <field name="inherit_id" ref="hr_holidays.hr_leave_view_dashboard"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//calendar" position="attributes">
+                             <attribute name="date_stop">NEW-VALUE</attribute>
+                        </xpath>
+                        <xpath expr="//calendar/field[@name='date_stop']" position="after">
+                             <field name="date_deadline"/>
+                        </xpath>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

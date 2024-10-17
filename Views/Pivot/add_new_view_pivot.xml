@@ -1,0 +1,33 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit pivot view definition -->
+        <record id="model_name_view_pivot" model="ir.ui.view">
+            <field name="name">model.name.view.pivot</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <pivot string="Pivot Name" disable_linking="True">
+                    <!-- design pivot -->
+                </pivot>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add pivot view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_pivot" model="ir.ui.view">
+                    <field name="name">commission.commission.view.pivot</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <pivot string="Commission Analysis" disable_linking="True">
+                            <field name="team_id" type="col"/>
+                            <field name="date" interval="month" type="row"/>
+                            <field name="price_subtotal" type="measure"/>
+                        </pivot>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

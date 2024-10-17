@@ -1,0 +1,26 @@
+<search>
+    <filter string="filter_name"
+            name="filter_field"
+            domain="[('filter_field', 'operation', value)]"/>
+</search>
+
+        <!-- EX1: Add filter "Has Won Lead"
+        <search>
+            <filter string="Has Won Lead"
+                    name="has_won_lead"
+                    domain="[('has_won_lead', '=', True)]"/>
+        </search>
+        -->
+
+        <!-- EX2: Add filter "Last 7 Days"
+        <search>
+            <filter string="Last 7 Days"
+                    name="last_7_days"
+                    domain="[(
+                        'order_date',
+                        '=',
+                        (datetime.date.today()-datetime.timedelta(days=7)).strftime("%Y-%m-%d 00:00:00")
+                    )]"
+             />
+        </search>
+        -->

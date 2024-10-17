@@ -1,0 +1,43 @@
+<!--file_name : views/model_name_views.xml-->
+<odoo>
+    <data>
+        <record id="model_name_view_map" model="ir.ui.view">
+            <field name="name">model.name.view.map</field>
+            <field name="model">model.name</field>
+            <field name="type">map</field>
+            <field name="inherit_id" ref="view_external_id"/>
+            <field name="arch" type="xml">
+                <!-- CUSTOMIZATIONS -->
+                <xpath expr="//map/field[@name='field_name']" position="position_option">
+                    <!-- position_options : {inside , after, before, replace, move, attributes} -->
+                    <!-- Modify Items -->
+                    <attribute name="attribute_name">New_value</attribute>
+                    <!-- Add Items -->
+                    <field name="field_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!-- EX: Inherit map view in "res.partner" model,
+                 file_name : "res_partner_views.xml"
+        <odoo>
+            <data>
+                <record id="res_partner_view_map" model="ir.ui.view">
+                    <field name="name">res.partner.view.map</field>
+                    <field name="model">res.partner</field>
+                    <field name="type">map</field>
+                    <field name="inherit_id" ref="base.view_res_partner_map"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//map/field[@name='name']" position="attributes">
+                             <attribute name="invisible">1</attribute>
+                        </xpath>
+                        <xpath expr="//map/field[@name='name']" position="after">
+                             <field name="address" invisible="0"/>
+                        </xpath>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

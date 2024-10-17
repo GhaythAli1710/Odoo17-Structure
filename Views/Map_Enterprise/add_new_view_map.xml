@@ -1,0 +1,50 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit map view definition -->
+        <record id="model_name_view_map" model="ir.ui.view">
+            <field name="name">model.name.view.map</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <map res_partner="many2one_field"
+                     default_order="default_sorting"
+                     routing="bool"
+                     hide_name="bool"
+                     hide_address="bool"
+                     panel_title="title">
+                    <field name="field_name" string="name_on_map"/>
+                </map>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--
+            - many2one_field : it is the Many2one field of res.partner Model.
+            - default_sorting : default sorting order of records, default="admn_code"
+            - routing : display the shortest route between two or more points on a map, bool=True
+            - hide_name : hide the title of the map, bool=True
+            - hide_address : hide the address of the record, bool=True
+            - panel_title : customize the title of the record's panel
+        -->
+
+        <!--EX: Add map view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_map" model="ir.ui.view">
+                    <field name="name">commission.commission.view.map</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <map res_partner="name"
+                             default_order="admn_code"
+                             routing="True"
+                             hide_name="True"
+                             hide_address="True"
+                             panel_title="Tracking Delivery Map">
+                            <field name="name" string="Delivery Person"/>
+                        </map>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

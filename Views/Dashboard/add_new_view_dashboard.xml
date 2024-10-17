@@ -1,0 +1,36 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit dashboard view definition -->
+        <record id="model_name_view_dashboard" model="ir.ui.view">
+            <field name="name">model.name.view.dashboard</field>
+            <field name="model">model.name</field>
+            <field name="type">view_type</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard Name">
+                    <board style="style_option">
+                        <!-- col1 -->
+                        <column>
+                            <!-- row1 -->
+                            <action name="%(module_name.window_action_external_id)d" string="Board Name"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--
+            style_options = {``1``, ``1-1``, ``1-1-1``, ``1-2`` and ``2-1``}
+            view_type = form
+        -->
+
+        <!-- EX: Inherit dashboard view in " " model,
+                 file_name : "_views.xml"
+        <odoo>
+            <data>
+
+            </data>
+        </odoo>
+        -->

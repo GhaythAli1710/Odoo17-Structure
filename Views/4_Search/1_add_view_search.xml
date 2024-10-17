@@ -1,0 +1,47 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit search view definition -->
+        <record id="model_name_view_search" model="ir.ui.view">
+            <field name="name">model.name.view.search</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- <field/> -->
+
+                    <!-- <filter/> -->
+
+                    <!-- <group>
+                        <filter/>
+                    </group> -->
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add search view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_search" model="ir.ui.view">
+                        <field name="name">commission.commission.view.search</field>
+                        <field name="model">commission.commission</field>
+                        <field name="arch" type="xml">
+                            <search>
+                                <field name="type"/>
+                                <field name="customer_id" filter_domain="[('customer_id.name', 'ilike', self)]"/>
+
+                                <filter name="type_internal" string="Internal" domain="[('type', '=', 'internal')]"/>
+                                <filter name="today_order" string="Today Order" domain="[('order_date', '=', time.strftime('%Y-%m-%d'))]"/>
+
+                                <group name="group_by" string="Group By">
+                                    <filter name="type" string="Type" context="{'group_by': 'type'}"/>
+                                    <filter name="customer_id" string="Customer" context="{'group_by': 'customer_id'}"/>
+                                    <filter name="order_date" string="Date" context="{'group_by': 'order_date'}"/>
+                                </group>
+                            </search>
+                        </field>
+                </record>
+            </data>
+        <odoo/>
+        -->

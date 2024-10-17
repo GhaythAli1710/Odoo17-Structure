@@ -1,0 +1,86 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit calendar view definition -->
+        <record id="model_name_view_calendar" model="ir.ui.view">
+            <field name="name">model.name.view.calendar</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <calendar date_start="field_date"
+                          string="Calendar Name"
+                          mode="mode_options"
+                          color="field_many2one"
+                          event_limit="5"
+                          hide_time="true"
+                          js_class="project_calendar"
+                          event_open_popup="true"
+                          quick_add="true">
+                    <!-- design calendar event -->
+                </calendar>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--
+        date_start
+          - It indicates the starting date of the calendar event.
+        date_stop
+          - It indicates the ending date of the calendar event.
+        date_delay
+          - It indicates the time in hours for a record,
+            It has a higher preference than date_start and date_stop,
+            If date_delay is specified,
+            then date_start and date_end will be ignored.
+        mode
+          - Calendar view provides a view on a mode_option basis,
+            It indicates the default view mode of the Calendar view when the page is loaded.
+        mode_options = {day, week, month, year}
+        color
+          - This gives color for different events based on the specified field(generally many2one),
+            Records with the same value for this field will show the same color.
+        day_length
+          - An integer value that helps to indicate working day duration. Default is 8 hours.
+        form_view_id
+          - It will open the form view we specified in this field.
+        event_open_popup
+          - If this is set, then the event will open as a popup.
+        quick_add
+          - This field can do instant event creation.
+        all_day
+          - This record boolean field indicates that the event
+            which corresponds to day-long is irrelevant for the duration.
+        -->
+
+        <!--EX: Add calendar view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_calendar" model="ir.ui.view">
+                    <field name="name">commission.commission.view.calendar</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <calendar date_start="date_deadline"
+                                  string="Tasks"
+                                  mode="month"
+                                  color="user_ids"
+                                  event_limit="5"
+                                  hide_time="true"
+                                  js_class="project_calendar"
+                                  event_open_popup="true"
+                                  quick_add="false">
+                                       <field name="project_id" filters="1"/>
+                                       <field name="user_ids" widget="many2many_avatar_user"/>
+                                       <field name="partner_id"
+                                              attrs="{'invisible': [('partner_id', '=', False)]}"/>
+                                       <field name="priority" widget="priority"/>
+                                       <field name="date_deadline"/>
+                                       <field name="tag_ids" widget="many2many_tags"
+                                              attrs="{'invisible': [('tag_ids', '=', [])]}"/>
+                                       <field name="stage_id"/>
+                                       <field name="kanban_state"/>
+                        </calendar>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

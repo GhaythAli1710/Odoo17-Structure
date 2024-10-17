@@ -1,0 +1,55 @@
+<!-- file_name : views/model_name_views.xml -->
+<!--
+    ** Requirements:
+   - Create a new model :
+     inherit 'ir.ui.view'
+
+     class ModelName(..):
+        _inherit=['ir.ui.view']
+
+        field_name = fields.Selection(
+                   selection_add=[('qweb_view', "QWEB View")],
+                   ondelete={'qweb_view': 'cascade'})
+-->
+<odoo>
+    <data>
+        <!-- explicit qweb view definition -->
+        <record id="model_name_view_qweb" model="ir.ui.view">
+            <field name="name">model.name.view.qweb</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <qweb_view>
+                    <t t-call="module_name.template_external_id">
+                        <t t-set="model" t-value="model_name"/>
+                    </t>
+                </qweb_view>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add qweb view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_qweb" model="ir.ui.view">
+                    <field name="name">commission.commission.view.qweb</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <qweb_view>
+                           <template id="company_structure_test">
+                                <h1>qweb works</h1>
+                                <t t-set="test_data" t-value="model.get_company_structure_data()"/>
+                                <p t-esc="test_data"/>
+                                <p t-esc="test_data['test_str']"/>
+                                <p t-esc="test_data['test_list'][-1]"/>
+
+                                <script type="text/javascript">
+                                    console.log('this don`t work');
+                                </script>
+                            </template>
+                        </qweb_view>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->

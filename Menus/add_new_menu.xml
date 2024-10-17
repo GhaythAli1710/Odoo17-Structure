@@ -1,0 +1,58 @@
+<!-- file_name : views/module_name_menus.xml -->
+
+<!-- ******************************************************************************
+           Add Root Menu " add new app to apps in root menu "
+-->
+<odoo>
+    <data>
+        <!-- Top level menu : no parent -->
+        <menuitem id="module_name_menu_root"
+                  name="module_name"
+                  groups="group_external_id"
+                  sequence="sequence_number"
+                  web_icon="module_name,static/description/app_icon.png"
+                  action="module_name.window_action_external_id"/>
+    </data>
+</odoo>
+
+        <!--EX: Add new custom module_name "Commission" to root menu, file_name : "commission_menus.xml"
+        <odoo>
+            <data>
+                <menuitem id="commission_menu_root"
+                          name="Commissions"
+                          groups="base.group_user"
+                          sequence="10"
+                          web_icon="commission,static/description/app_icon.png"
+                          action="commission.commission_commission_window_action"/>
+            </data>
+        </odoo>
+        -->
+
+        <!-- ******************************************************************************
+                    Add Sub Menu " add submenu to exist menu "
+        -->
+<odoo>
+<data>
+    <!-- Submenu menu_name in parent_menu -->
+    <menuitem id="module_name_menu_menu_name"
+              name="module_name"
+              parent="module_name.parent_menu_external_id"
+              groups="group_external_id"
+              sequence="sequence_number"
+              action="module_name.window_action_external_id"/>
+</data>
+</odoo>
+
+        <!--EX: Add Submenu "Other" to parent_menu "sale_menu_root",
+                file_name : "sale_menus.xml"
+        <odoo>
+            <data>
+                <menuitem id="sale_menu_other"
+                          name="Other"
+                          parent="sale.sale_menu_root"
+                          groups="base.group_user"
+                          sequence="1"
+                          action="sale.sale_order_window_action"/>
+            </data>
+        </odoo>
+        -->

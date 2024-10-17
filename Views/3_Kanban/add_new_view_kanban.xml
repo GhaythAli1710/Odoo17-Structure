@@ -1,0 +1,116 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit kanban view definition -->
+        <record id="model_name_view_kanban" model="ir.ui.view">
+            <field name="name">model.name.view.kanban</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <kanban string=" "
+                        create="true"
+                        edit="true"
+                        delete="true"
+                        default_group_by="field_name"
+                        class="design_class"
+                        group_create="true"
+                        group_delete="true"
+                        group_edit="true"
+                        quick_create="true"
+                        quick_create_view="module_name.quick_create_view_form_external_id"
+                        records_draggable="true"
+                        groups_draggable="true"
+                        sample="sample_number"
+                        archivable="false"
+                        on_create="quick_create">
+                    <templates>
+                        <t t-name="kanban-menu">
+                            <t t-if="widget.editable">
+                                <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                            </t>
+                            <t t-if="widget.deletable">
+                                <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                            </t>
+                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                                <!-- card design -->
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--EX: Add kanban view on model "commission.commission" Grouped_by : stage_id field,
+                file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_kanban" model="ir.ui.view">
+                        <field name="name">commission.commission.view.kanban</field>
+                        <field name="model">commission.commission</field>
+                        <field name="arch" type="xml">
+                            <kanban string="New Stage"
+                                    create="true"
+                                    edit="true"
+                                    delete="true"
+                                    default_group_by="stage_id"
+                                    class="o_kanban_small_column"
+                                    group_create="true"
+                                    group_delete="true"
+                                    group_edit="true"
+                                    quick_create="true"
+                                    quick_create_view="commission.commission_commission_quick_create_view_form"
+                                    records_draggable="true"
+                                    groups_draggable="true"
+                                    sample="1"
+                                    archivable="false"
+                                    on_create="quick_create">
+                                <progressbar field="field_state"
+                                             colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+                                <templates>
+                                    <t t-name="kanban-menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </t>
+                                    <t t-name="kanban-box">
+                                        <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                                            <div>
+                                                <strong class="o_kanban_record_title">
+                                                    <span>
+                                                        <field name="name"/>
+                                                    </span>
+                                                </strong>
+                                            </div>
+                                            <div>
+                                                <span class="o_kanban_record_subtitle">
+                                                    <field name="reference"/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="o_kanban_record_bottom">
+                                            <div class="oe_kanban_bottom_left">
+                                                <field name="priority" widget="priority"/>
+                                                <div class="o_kanban_inline_block">
+                                                    <field name="activity_ids" widget="kanban_activity"/>
+                                                </div>
+                                            </div>
+                                            <div class="oe_kanban_bottom_right">
+                                                <field name="user_id" widget="many2one_avatar_user" domain="[('share', '=', False)]"/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                </record>
+            </data>
+        </odoo>
+        -->

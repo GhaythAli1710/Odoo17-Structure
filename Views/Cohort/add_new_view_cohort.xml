@@ -1,0 +1,40 @@
+<!-- file_name : views/model_name_views.xml -->
+<odoo>
+    <data>
+        <!-- explicit cohort view definition -->
+        <record id="model_name_view_cohort" model="ir.ui.view">
+            <field name="name">model.name.view.cohort</field>
+            <field name="model">model.name</field>
+            <field name="arch" type="xml">
+                <cohort string="Cohort Name"
+                        date_start="field_create_date"
+                        date_stop="field_date"
+                        interval="interval_option"
+                        mode="mode_option"/>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+        <!--
+        interval_options = {day, week, month, year}
+        mode_options = {Retention, Churn}
+        -->
+
+        <!--EX: Add cohort view on model "commission.commission", file_name : "commission_commission_views.xml"
+        <odoo>
+            <data>
+                <record id="commission_commission_view_cohort" model="ir.ui.view">
+                    <field name="name">commission.commission.view.cohort</field>
+                    <field name="model">commission.commission</field>
+                    <field name="arch" type="xml">
+                        <cohort string="Analysis"
+                                date_start="create_date"
+                                date_stop="date"
+                                interval="day"
+                                mode="Churn"/>
+                    </field>
+                </record>
+            </data>
+        </odoo>
+        -->
